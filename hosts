@@ -11,6 +11,7 @@ rpi3017
 
 [dockermaster]
 rpi3014
+rpi3016
 
 [dockerslave]
 rpi3015
