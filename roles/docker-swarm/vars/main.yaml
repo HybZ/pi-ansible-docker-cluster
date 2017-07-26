@@ -1,0 +1,7 @@
+---
+ansible_ssh_user: pi
+dockerPort: 4243
+
+docker_swarm_interface: "{{ ansible_default_ipv4['interface'] }}"
+docker_swarm_address: "{{ hostvars[inventory_hostname]['ansible_' + docker_swarm_interface]['ipv4']['address'] }}"
+docker_swarm_port: 5432

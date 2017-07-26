@@ -1,3 +1,0 @@
----
-ansible_ssh_user: pi
-dockerPort: 4243

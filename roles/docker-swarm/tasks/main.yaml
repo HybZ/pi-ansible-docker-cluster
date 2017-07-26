@@ -42,3 +42,6 @@
 - name: Restart docker when config change
   service: name=docker state=restarted
   when: dockerConfig.changed
+
+# Initialize the swarm nodes
+- include: swarm_cluster.yaml
