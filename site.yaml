@@ -1,0 +1,17 @@
+--- # Playbook starting it all
+- name: "Common tasks for all hosts"
+  hosts: all                                # What group is impacted by this role(s)
+  serial: 4                                 # How many nodes should be processed at once
+  become: yes                               # Get super user rights
+  become_method: sudo
+  roles:
+    - { role: common }
+
+- name: "Provision docker swarm cluster"
+  hosts: clusternodes                       # What group is impacted by this role(s)
+  serial: 4                                 # How many nodes should be processed at once
+  remote_user: root                         # Get super user rights
+  become: yes
+  become_method: sudo
+  roles:
+    - { role: docker-swarm }

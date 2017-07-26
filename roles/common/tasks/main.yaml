@@ -1,0 +1,13 @@
+---
+- name: Ensure vim is present
+  apt: name=vim state=installed
+
+- name: Ensure alias vi is vim
+  lineinfile:
+    dest=/home/pi/.bashrc
+    line="alias vi='vim'"
+    regexp="^alias vi='vim'"
+    owner=pi
+    state=present
+    insertafter="^# some more ls aliases"
+    create=True
